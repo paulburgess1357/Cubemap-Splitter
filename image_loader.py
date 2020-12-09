@@ -15,6 +15,8 @@ class ImageLoader:
     def __load_image(self):
         print("Reading Image: " + self.image_path)
         self.image_data = cv2.imread(self.image_path)
+        if not self.image_data:
+            raise ImageNotFound("No image found at: " + self.image_path)
 
     def __load_image_metadata(self):
         self.image_height, self.image_width, self.image_channels = self.image_data.shape
@@ -32,3 +34,8 @@ class ImageLoader:
 
     def get_image_channels(self):
         return self.image_channels
+
+
+class ImageNotFound(Exception):
+    """Raised when the image cannot be found"""
+    pass
