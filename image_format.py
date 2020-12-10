@@ -36,16 +36,16 @@ class ImageFormat:
         return copy.deepcopy(ImageFormat.all_format_dicts[format_type - 1])
 
     @staticmethod
-    def get_format_dim(format_type):
+    def get_format_dimensions(format_type):
         return copy.deepcopy(ImageFormat.all_format_dims[format_type - 1])
 
 
 class ImageMapper:
 
     @staticmethod
-    def map_split(split_image, format_type):
+    def map_split(image_split_calculation, format_type):
         format_dict = ImageFormat.all_format_dicts[format_type - 1]
-        image_index = split_image.get_image_index()
+        image_index = image_split_calculation.get_image_index()
         for key, value in format_dict.items():
             if value == image_index:
                 return key

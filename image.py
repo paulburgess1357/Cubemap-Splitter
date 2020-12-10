@@ -3,37 +3,41 @@ import copy
 
 
 class Image:
-    def __init__(self, image_path):
-        self.image_path = image_path
-        self.image_data = None
-        self.image_width = None
-        self.image_height = None
-        self.image_channels = None
-        self.__load_image()
-        self.__load_image_metadata()
+    def __init__(self, image_path, format_type):
+        self.path = image_path
+        self.format_type = format_type
+        self.data = None
+        self.width = None
+        self.height = None
+        self.channels = None
+        self.__load()
+        self.__load_metadata()
 
-    def __load_image(self):
-        print("Reading Image: " + self.image_path)
-        self.image_data = cv2.imread(self.image_path)
-        if self.image_data is None:
-            raise ImageNotFound("No image found at: " + self.image_path)
+    def __load(self):
+        print("Reading Image: " + self.path)
+        self.data = cv2.imread(self.path)
+        if self.data is None:
+            raise ImageNotFound("No image found at: " + self.path)
 
-    def __load_image_metadata(self):
-        self.image_height, self.image_width, self.image_channels = self.image_data.shape
-        print("Image Metadata: Width: %d | Height: %d | Channels: %d" % (self.image_width, self.image_height,
-                                                                         self.image_channels))
+    def __load_metadata(self):
+        self.height, self.width, self.channels = self.data.shape
+        print("Image Metadata: Width: %d | Height: %d | Channels: %d" % (self.width, self.height,
+                                                                         self.channels))
 
-    def get_image_data(self):
-        return copy.deepcopy(self.image_data)
+    def get_format_type(self):
+        return self.format_type
 
-    def get_image_width(self):
-        return self.image_width
+    def get_data(self):
+        return copy.deepcopy(self.data)
 
-    def get_image_height(self):
-        return self.image_height
+    def get_width(self):
+        return self.width
 
-    def get_image_channels(self):
-        return self.image_channels
+    def get_height(self):
+        return self.height
+
+    def get_channels(self):
+        return self.channels
 
 
 class ImageNotFound(Exception):
