@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b8b0fa8-6aee-46c9-85c3-52ea2c1bee70" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_writer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skybox_splitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/skybox_splitter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skybox_splitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_splitter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +49,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1011" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607568999173">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1011" y="448" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/3840.284.1920.1080/-1920.262.1920.1080@0.0.2560.1400" timestamp="1607568999173" />
     <state x="908" y="455" key="FileChooserDialogImpl" timestamp="1607209075497">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

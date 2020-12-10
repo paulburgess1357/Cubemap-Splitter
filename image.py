@@ -2,7 +2,7 @@ import cv2
 import copy
 
 
-class ImageLoader:
+class Image:
     def __init__(self, image_path):
         self.image_path = image_path
         self.image_data = None
@@ -15,7 +15,7 @@ class ImageLoader:
     def __load_image(self):
         print("Reading Image: " + self.image_path)
         self.image_data = cv2.imread(self.image_path)
-        if not self.image_data:
+        if self.image_data is None:
             raise ImageNotFound("No image found at: " + self.image_path)
 
     def __load_image_metadata(self):

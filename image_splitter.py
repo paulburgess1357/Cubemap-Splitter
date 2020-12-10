@@ -1,3 +1,4 @@
+from image_format import ImageFormat
 import math
 import copy
 
@@ -17,25 +18,29 @@ class SplitIndices:
         print("Y Max: " + str(self.y_max))
         print("Index: (%d, %d)" % (self.image_index[0], self.image_index[1]))
 
+    def get_image_index(self):
+        return copy.deepcopy(self.image_index)
 
-class SkyboxSplitter:
-    def __init__(self, image_loader):
-        self.image_loader = image_loader
+
+class ImageSplitter:
+    def __init__(self, image, format_type):
+        self.image = image
+        self.format_type = format_type
         self.image_splits = None
 
     def calculate_horizontal_increment(self):
-        horizontal_increment = math.floor(self.image_loader.get_image_width() / 4)
+        horizontal_increment = math.floor(self.image.get_image_width() / ImageFormat.get_format_dim(self.format_type)[1])
         return horizontal_increment
 
     def calculate_vertical_increment(self):
-        vertical_increment = math.floor(self.image_loader.get_image_height() / 3)
+        vertical_increment = math.floor(self.image.get_image_height() / ImageFormat.get_format_dim(self.format_type)[0])
         return vertical_increment
 
-    def calculate_image_splits(self):
+    def calculate_splits(self):
         print("Calculating Splits")
         self.image_splits = []
 
-        image_data = self.image_loader.get_image_data()
+        image_data = self.image.get_image_data()
         vertical_increment = self.calculate_vertical_increment()
         horizontal_increment = self.calculate_horizontal_increment()
 
@@ -43,9 +48,5 @@ class SkyboxSplitter:
             for y_index, x in enumerate(range(0, image_data.shape[1], horizontal_increment)):
                 self.image_splits.append(SplitIndices(x, x + horizontal_increment, y, y + vertical_increment, x_index, y_index))
 
-    def get_image_splits(self):
+    def get_splits(self):
         return copy.deepcopy(self.image_splits)
-
-
-class SkyboxMapper:
-    pass

@@ -1,10 +1,28 @@
-import image_loader as iml
-import skybox_splitter as spl
+import image as img
+import image_splitter as ims
+import image_format as imf
+import cv2
 
-image_path = "C:\\Users\\paulb\\Desktop\\waffle.png"
-image_loader = iml.ImageLoader(image_path)
+test = imf.ImageFormat.get_format_dictionary(1)
+test['top'] = None
 
-skybox_splitter = spl.SkyboxSplitter(image_loader)
-skybox_splitter.calculate_image_splits()
+image_path = "C:\\Users\\paulb\\Desktop\\cubemap_formats\\format_1.png"
+image = img.Image(image_path)
 
-splits = skybox_splitter.get_image_splits()
+image_splitter = ims.ImageSplitter(image)
+image_splitter.calculate_splits()
+
+splits = image_splitter.get_splits()
+
+image_mapper = imm.ImageMapper(splits[1], 1)
+
+result = image_mapper.map_split()
+
+image_mapper.map_split()
+
+
+image = image.get_image_data()
+split_image = splits[0]
+
+# TODO make write excepction error.  This returns true if it writes and false if it does not.
+cv2.imwrite("c:/users/paulb/desktop/testpaul.png", image[image_split.x_min:image_split.x_max, image_split.y_min:image_split.y_max])
