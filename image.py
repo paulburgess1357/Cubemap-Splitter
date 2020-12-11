@@ -39,6 +39,9 @@ class Image:
     def get_channels(self):
         return self.channels
 
+    def get_path(self):
+        return self.path
+
 
 class ImageNotFound(Exception):
     """Raised when the image cannot be found"""
