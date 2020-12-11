@@ -1,3 +1,13 @@
+"""
+The purpose of the image_format module is to provide a class that contains the various format types that a cubemap
+can be created as.  Additionally, a mapping class is provided that simply maps the index values to real world names.
+
+Classes
+----------
+ImageFormat
+ImageMapper
+"""
+
 import copy
 
 

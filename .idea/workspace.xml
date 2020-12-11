@@ -9,7 +9,6 @@
       <change beforePath="$PROJECT_DIR$/image_format.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_format.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image_splitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_splitter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image_writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_writer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

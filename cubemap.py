@@ -1,3 +1,13 @@
+"""
+The purpose of the cubemap module is to provide a simple one line function call to take a cubemap image file and split
+it into the corresponding blocks (top, bottom, front, back, left, right).
+
+Functions
+----------
+split_cubemap(image_path, format_type="auto", output_directory=None)
+"""
+
+
 from image import Image
 from image_splitter import ImageSplitCalculator
 from image_writer import BlockImageWriter

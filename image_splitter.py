@@ -1,3 +1,13 @@
+"""
+The purpose of the image_splitter module is to provide a way to split and store image information.
+
+Classes
+----------
+SplitIndices
+ImageSplitCalculator
+AutoImageFormat
+"""
+
 from image_format import ImageFormat
 from image_format import ImageMapper
 import numpy as np

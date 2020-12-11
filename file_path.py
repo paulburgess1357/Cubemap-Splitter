@@ -1,3 +1,11 @@
+"""
+The purpose of the file_path module is to provide a simple class that handles folder creation and file path values.
+
+Classes
+----------
+ImageFilePaths
+"""
+
 import os
 
 

@@ -1,3 +1,15 @@
+"""
+The purpose of the image_writer module is to provide a way to take image data, subset it, and write it to a new folder.
+
+Classes
+----------
+BlockImageWriter
+
+Exceptions
+----------
+ImageFailedToWrite
+"""
+
 import cv2
 import os
 from file_path import ImageFilePaths

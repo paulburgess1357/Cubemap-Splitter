@@ -1,3 +1,15 @@
+"""
+The purpose of the image module is to provide a class that can read and store image information.
+
+Classes
+----------
+Image
+
+Exceptions
+----------
+ImageNotFound
+"""
+
 import cv2
 import copy
 
