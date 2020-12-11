@@ -3,44 +3,39 @@ import copy
 
 
 class Image:
-    def __init__(self, image_path, format_type):
-        self.path = image_path
-        self.format_type = format_type
-        self.data = None
-        self.width = None
-        self.height = None
-        self.channels = None
-        self.__load()
-        self.__load_metadata()
+    def __init__(self, image_path):
+        self.__path = image_path
+        self.__image_data = None
+        self.__width = None
+        self.__height = None
+        self.__channels = None
+        self.__load_image_data()
+        self.__load_image_metadata()
 
-    def __load(self):
-        print("Reading Image: " + self.path)
-        self.data = cv2.imread(self.path)
-        if self.data is None:
-            raise ImageNotFound("No image found at: " + self.path)
+    def __load_image_data(self):
+        print("Reading Image: %s" % self.__path)
+        self.__image_data = cv2.imread(self.__path)
+        if self.__image_data is None:
+            raise ImageNotFound("No image found at: " + self.__path)
 
-    def __load_metadata(self):
-        self.height, self.width, self.channels = self.data.shape
-        print("Image Metadata: Width: %d | Height: %d | Channels: %d" % (self.width, self.height,
-                                                                         self.channels))
-
-    def get_format_type(self):
-        return self.format_type
+    def __load_image_metadata(self):
+        self.__height, self.__width, self.__channels = self.__image_data.shape
+        print("Width: %d | Height: %d | Channels: %d" % (self.__width, self.__height, self.__channels))
 
     def get_data(self):
-        return copy.deepcopy(self.data)
+        return copy.deepcopy(self.__image_data)
 
     def get_width(self):
-        return self.width
+        return self.__width
 
     def get_height(self):
-        return self.height
+        return self.__height
 
     def get_channels(self):
-        return self.channels
+        return self.__channels
 
     def get_path(self):
-        return self.path
+        return self.__path
 
 
 class ImageNotFound(Exception):

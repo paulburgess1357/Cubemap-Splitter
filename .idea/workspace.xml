@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b8b0fa8-6aee-46c9-85c3-52ea2c1bee70" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/paulb.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file_path.py" beforeDir="false" afterPath="$PROJECT_DIR$/file_path.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_format.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_format.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image_splitter.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_splitter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/image_writer.py" beforeDir="false" afterPath="$PROJECT_DIR$/image_writer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>

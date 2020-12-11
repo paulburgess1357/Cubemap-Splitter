@@ -32,20 +32,22 @@ class ImageFormat:
     all_format_dims = [format_1_dim, format_2_dim, format_3_dim, format_4_dim, format_5_dim]
 
     @staticmethod
-    def get_format_dictionary(format_type):
-        return copy.deepcopy(ImageFormat.all_format_dicts[format_type - 1])
+    def get_format_dict(format_type):
+        format_dict = ImageFormat.all_format_dicts[format_type - 1]
+        return copy.deepcopy(format_dict)
 
     @staticmethod
-    def get_format_dimensions(format_type):
-        return copy.deepcopy(ImageFormat.all_format_dims[format_type - 1])
+    def get_format_dim(format_type):
+        format_dims = ImageFormat.all_format_dims[format_type - 1]
+        return copy.deepcopy(format_dims)
 
 
 class ImageMapper:
 
     @staticmethod
     def map_split(image_split_calculation, format_type):
-        format_dict = ImageFormat.all_format_dicts[format_type - 1]
-        image_index = image_split_calculation.get_image_index()
+        format_dict = ImageFormat.get_format_dict(format_type)
+        image_index = image_split_calculation.image_index
         for key, value in format_dict.items():
             if value == image_index:
                 return key

@@ -1,41 +1,49 @@
 import cv2
-from file_path import OutputImagesFilePaths
+import os
+from file_path import ImageFilePaths
 
 
-class ImageWriter:
-    def __init__(self, image, image_splitter, output_directory=None):
-        self.image = image
-        self.image_data = image.get_data()
-        self.image_splits = image_splitter.get_splits()
-        self.output_images_path = OutputImagesFilePaths(image.get_path())
-        self.output_directory = output_directory
-        self.extension = self.output_images_path.get_extension()
-        self.__get_output_directory()
-        self.__get_extension()
+class BlockImageWriter:
+    def __init__(self, image, split_calculator, output_directory=None):
+        self.__image = image
+        self.__split_calculator = split_calculator
+        self.__output_directory = output_directory
+        self.__path_handler = None
+        self.__set_path_handler()
+        self.__set_output_directory()
 
-    def __get_extension(self):
-        self.extension = FilePath.get_file_extension(self.image.get_path())
+    def __set_path_handler(self):
+        image_path = self.__image.get_path()
+        self.__path_handler = ImageFilePaths(image_path)
 
-    def __get_output_directory(self):
-        if not self.output_directory:
-            self.output_directory = FilePath.create_new_folder(self.image.get_path())
+    def __set_output_directory(self):
+        if not self.__output_directory:
+            self.__path_handler.create_new_folder()
+            self.__output_directory = self.__path_handler.get_new_folder_path()
 
-    def get_full_filepath(self, file_name):
-        return self.output_directory + "/" + file_name + self.extension
+    def get_full_file_path(self, file_name):
+        file_name += self.__path_handler.get_file_extension()
+        file_path = os.path.join(self.__output_directory, file_name)
+        return file_path
 
-    def write_images(self):
-        print("Output Directory: %s" % self.output_directory)
-
-        for image_split in self.image_splits:
-            file_name = image_split.get_image_mapped_name()
+    def write_image_blocks(self):
+        print("Output Directory: %s" % self.__output_directory)
+        image_data = self.__image.get_data()
+        image_splits = self.__split_calculator.get_splits()
+        for image_split in image_splits:
+            file_name = image_split.image_mapped_name
             if file_name:
-                full_file_path = self.get_full_filepath(file_name)
-                result = cv2.imwrite(full_file_path, self.image_data[image_split.y_min:image_split.y_max, image_split.x_min:image_split.x_max:])
+                full_file_path = self.get_full_file_path(file_name)
+                write_result = cv2.imwrite(full_file_path, image_data[image_split.y_min:image_split.y_max,
+                                                                      image_split.x_min:image_split.x_max:])
+                self.__check_write_result(write_result, full_file_path)
 
-                if result:
-                    print("File Successfully Written: %s" % file_name)
-                else:
-                    raise ImageFailedToWrite("Image: %s filed to write" % full_file_path)
+    @staticmethod
+    def __check_write_result(write_result, full_file_path):
+        if write_result:
+            print("File Successfully Written: %s" % full_file_path)
+        else:
+            raise ImageFailedToWrite("Image: %s filed to write" % full_file_path)
 
 
 class ImageFailedToWrite(Exception):
