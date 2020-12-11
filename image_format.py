@@ -2,7 +2,19 @@ import copy
 
 
 class ImageFormat:
+    """
+    The ImageFormat class contains dictionary and dimension information for the various possible accepted cubemap
+    formats.
 
+    ...
+
+    Methods
+    -------
+    get_format_dict(format_type)
+        Returns a format dictionary with mapped values to image blocks.
+    get_format_dim(format_type)
+        Returns a list with image block dimension information.
+    """
     format_1 = {
         "top": [0, 1], "left": [1, 0], "front": [1, 1], "right": [1, 2], "back": [1, 3], "bottom": [2, 1]
     }
@@ -33,21 +45,74 @@ class ImageFormat:
 
     @staticmethod
     def get_format_dict(format_type):
+        """
+        Returns a format dictionary with mapped values to image blocks.
+
+        Parameters
+        ----------
+        format_type : int
+            Specific image format type (1 - 5)
+
+        Returns
+        -------
+        dict
+            Dictionary with format information.
+        """
         format_dict = ImageFormat.all_format_dicts[format_type - 1]
         return copy.deepcopy(format_dict)
 
     @staticmethod
     def get_format_dim(format_type):
+        """
+        Returns a list with image block dimension information.
+
+        Parameters
+        ----------
+        format_type : int
+            Specific image format type (1 - 5)
+
+        Returns
+        -------
+        list
+            List with format information [row_num, col_num].
+        """
         format_dims = ImageFormat.all_format_dims[format_type - 1]
         return copy.deepcopy(format_dims)
 
 
 class ImageMapper:
+    """
+    The Image mapper class provides the index mapping to name mapping.
+
+    ...
+
+    Methods
+    -------
+    map_split(image_split_calculation, format_type)
+        Returns the mapped value to the split.  For example, when using format_type = 1, the position [0, 1] (row x col)
+        is the top of the cubemap.  This would return 'top' in this example.
+    """
 
     @staticmethod
-    def map_split(image_split_calculation, format_type):
+    def map_split(split_index, format_type):
+        """
+        Returns the mapped value to the split.  For example, when using format_type = 1, the position [0, 1] (row x col)
+        is the top of the cubemap.  This would return 'top' in this example.
+
+        Parameters
+        ----------
+        split_index : SplitIndices
+            The index split that is being mapped.
+        format_type : int
+            Image format type
+
+        Returns
+        -------
+        str
+            Mapped name.  If no match is found, None is returned.
+        """
         format_dict = ImageFormat.get_format_dict(format_type)
-        image_index = image_split_calculation.image_index
+        image_index = split_index.image_index
         for key, value in format_dict.items():
             if value == image_index:
                 return key

@@ -1,5 +1,5 @@
 from cubemap import split_cubemap
 
-split_cubemap(image_path="C:/users/paulb/desktop/test_splits/format_1.png")
+split_cubemap("C:\\Users\\paulb\\Downloads\\Fantasy Skybox FREE\\Materials\\Classic\\FS000_Day_01_Sunless.png", "auto", "c:/users/paulb/desktop/new_images")
 
 
