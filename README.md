@@ -15,7 +15,7 @@ pip install cubemap_splitter
 ## Usage example
 
 ```
-from cubemap_splitter.cubemap_splitter import split_cubemap
+from cubemap_splitter import split_cubemap
 
 # Automatically determine format and create new directory with images at original image location
 split_cubemap("C:\\Users\\paulb\\Desktop\\cubemap_formats\\cubemap.png")
