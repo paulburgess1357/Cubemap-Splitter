@@ -11,7 +11,7 @@ Cubemap images are typically implemented as a single image.  Some applications a
 ```sh
 pip install cubemap_splitter
 ```
-**Numpy 1.19.4 & 64bit Python**
+**Numpy 1.19.4 & 64bit Python**  
 Numpy version 1.19.3 will install alongside the package if it is not currently installed.  There is a bug with 64bit Python and Numpy 1.19.4:  
 * https://github.com/opencv/opencv/issues/8139  
 * https://developercommunity.visualstudio.com/content/problem/1207405/fmod-after-an-update-to-windows-2004-is-causing-a.html  
