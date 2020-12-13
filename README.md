@@ -14,7 +14,6 @@ pip install cubemap_splitter
 
 ## Usage example
 
-Split cubemap, autoformat, create new directory at image location:
 ```
 from cubemap_splitter.cubemap_splitter import split_cubemap
 
