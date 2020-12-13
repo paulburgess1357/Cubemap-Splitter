@@ -12,7 +12,7 @@ Cubemap images are typically implemented as a single image.  Some applications a
 pip install cubemap_splitter
 ```
 
-## Usage example
+## Usage
 
 ```
 from cubemap_splitter import split_cubemap
