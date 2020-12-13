@@ -8,9 +8,9 @@ split_cubemap(image_path, format_type="auto", output_directory=None)
 """
 
 
-from image import Image
-from image_splitter import ImageSplitCalculator
-from image_writer import BlockImageWriter
+from .image import Image
+from .image_splitter import ImageSplitCalculator
+from .image_writer import BlockImageWriter
 
 
 def split_cubemap(image_path, format_type="auto", output_directory=None):

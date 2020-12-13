@@ -10,9 +10,9 @@ Exceptions
 ImageFailedToWrite
 """
 
+from .file_path import ImageFilePaths
 import cv2
 import os
-from file_path import ImageFilePaths
 
 
 class BlockImageWriter:

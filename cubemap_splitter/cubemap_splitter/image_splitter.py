@@ -8,8 +8,8 @@ ImageSplitCalculator
 AutoImageFormat
 """
 
-from image_format import ImageFormat
-from image_format import ImageMapper
+from .image_format import ImageFormat
+from .image_format import ImageMapper
 import numpy as np
 import math
 import copy
