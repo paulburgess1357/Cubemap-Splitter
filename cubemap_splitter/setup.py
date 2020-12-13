@@ -10,8 +10,8 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="cubemap_splitter",
-    version="0.0.1",
-    description="Split cubemap images into smaller individual face files",
+    version="0.1.7",
+    description="Python library for automatically splitting and writing cubemap subset images",
     long_description=README,
     long_description_content_type="text/markdown",
     url="https://github.com/paulburgess1357/Cubemap-Splitter",
@@ -24,5 +24,5 @@ setup(
     ],
     packages=["cubemap_splitter"],
     include_package_data=True,
-    install_requires=["cv2"],
+    install_requires=["opencv-python", "numpy<=1.19.3"],
 )
