@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="cubemap_splitter",
-    version="0.1.7",
+    version="0.1.1",
     description="Python library for automatically splitting and writing cubemap subset images",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -24,5 +24,5 @@ setup(
     ],
     packages=["cubemap_splitter"],
     include_package_data=True,
-    install_requires=["opencv-python", "numpy<=1.19.3"],
+    install_requires=["opencv-python", "numpy<1.19.4"],
 )

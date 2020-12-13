@@ -9,9 +9,9 @@ Cubemap images are typically implemented as a single image.  Some applications a
 ## Installation
 
 ```
-pip install cubemap_splitter
+pip install cubemap-splitter
 ```
-**Numpy 1.19.4 & 64bit Python**
+**Numpy 1.19.4 & 64bit Python**  
 Numpy version 1.19.3 will install alongside the package if it is not currently installed.  There is a bug with 64bit Python and Numpy 1.19.4:  
 * https://github.com/opencv/opencv/issues/8139  
 * https://developercommunity.visualstudio.com/content/problem/1207405/fmod-after-an-update-to-windows-2004-is-causing-a.html  
@@ -50,15 +50,11 @@ The following formats are supported.  Note that the format_type = "auto" default
   
 * format_type = 5    
 ![](https://github.com/paulburgess1357/Cubemap-Splitter/blob/master/images/format_type_5.png?raw=true)  
-  
-## Development setup
-
-Numpy and opencv (cv2) are required.  These will be installed alongside the package.
 
 
 ## Release History
 
-* 0.0.1
+* 0.1.1
     * Initial Release
 
 ## Meta

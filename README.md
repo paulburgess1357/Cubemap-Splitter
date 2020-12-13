@@ -9,7 +9,7 @@ Cubemap images are typically implemented as a single image.  Some applications a
 ## Installation
 
 ```
-pip install cubemap_splitter
+pip install cubemap-splitter
 ```
 **Numpy 1.19.4 & 64bit Python**
 Numpy version 1.19.3 will install alongside the package if it is not currently installed.  There is a bug with 64bit Python and Numpy 1.19.4:  
@@ -54,7 +54,7 @@ The following formats are supported.  Note that the format_type = "auto" default
 
 ## Release History
 
-* 0.0.1
+* 0.1.0
     * Initial Release
 
 ## Meta
