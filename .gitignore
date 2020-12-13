@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 cubemap_splitter/tests/.idea/
+cubemap_splitter/cubemap_splitter/.idea/
