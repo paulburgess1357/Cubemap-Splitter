@@ -1,78 +1,65 @@
 # Cubemap Splitter
-> Python library to split up single file cubemaps into multiple block images.
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
+> Python library to split up single file cubemaps into multiple block images.
 
 Cubemap images are typically implemented as a single image.  Some applications and game engines require multiple images when setting up a cubemap.  This library takes the single image and writes subset block images (top, bottom, left, right, front, back) for a variety of formats.
 
-![](header.png)
+![](images/github_image_example.png)
 
 ## Installation
 
-OS X & Linux:
-
 ```sh
-npm install my-crazy-module --save
-```
-
-Windows:
-
-```sh
-edit autoexec.bat
+pip install cubemap_splitter
 ```
 
 ## Usage example
 
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
+Split cubemap, autoformat, create new directory at image location:
+```
+from cubemap_splitter.cubemap_splitter import split_cubemap
 
-_For more examples and usage, please refer to the [Wiki][wiki]._
+# Automatically determine format and create new directory with images at original image location
+split_cubemap("C:\\Users\\paulb\\Desktop\\cubemap_formats\\cubemap.png")
 
+# Specify format and write to user defined directory
+split_cubemap("C:\\Users\\paulb\\Desktop\\cubemap_formats\\cubemap.png", format_type=1, output_directory="c:/users/paulb/new_splits")
+
+```
+
+## Supported Formats
+The following formats are supported.  Note that the format_type = "auto" default argument will likely suffice.  If the split images look incorrect, you can manually specify the format:
+
+* format_type = 1  
+![](images/format_type_1.png)  
+  
+  
+* format_type = 2  
+![](images/format_type_2.png)  
+  
+  
+* format_type = 3  
+![](images/format_type_3.png)  
+  
+* format_type = 4  
+![](images/format_type_4.png)  
+  
+* format_type = 5    
+![](images/format_type_5.png)  
+  
 ## Development setup
 
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
+Numpy and opencv (cv2) are required.  These will be installed alongside the package.
 
-```sh
-make install
-npm test
-```
 
 ## Release History
 
-* 0.2.1
-    * CHANGE: Update docs (module code remains unchanged)
-* 0.2.0
-    * CHANGE: Remove `setDefaultXYZ()`
-    * ADD: Add `init()`
-* 0.1.1
-    * FIX: Crash when calling `baz()` (Thanks @GenerousContributorName!)
-* 0.1.0
-    * The first proper release
-    * CHANGE: Rename `foo()` to `bar()`
 * 0.0.1
-    * Work in progress
+    * Initial Release
 
 ## Meta
 
-Your Name – [@YourTwitter](https://twitter.com/dbader_org) – YourEmail@example.com
+Paul Burgess – paulburgess1357@gmail.com
 
-Distributed under the XYZ license. See ``LICENSE`` for more information.
+Distributed under the MIT license. See ``LICENSE`` for more information.
 
-[https://github.com/yourname/github-link](https://github.com/dbader/)
-
-## Contributing
-
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
-
-<!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/yourname/yourproject/wiki
+[https://github.com/paulburgess1357/Cubemap-Splitter/blob/master/LICENSE]
