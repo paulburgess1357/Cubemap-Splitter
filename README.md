@@ -63,4 +63,4 @@ Paul Burgess – paulburgess1357@gmail.com
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
 
-[https://github.com/paulburgess1357/Cubemap-Splitter/blob/master/LICENSE]
+[License](https://github.com/paulburgess1357/Cubemap-Splitter/blob/master/LICENSE)
