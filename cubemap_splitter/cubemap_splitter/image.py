@@ -71,7 +71,7 @@ class Image:
             No image found at self.__path
         """
         print("Reading Image: %s" % self.__path)
-        self.__image_data = cv2.imread(self.__path)
+        self.__image_data = cv2.imread(self.__path, cv2.IMREAD_ANYCOLOR | cv2.IMREAD_ANYDEPTH)
         if self.__image_data is None:
             raise ImageNotFound("No image found at: " + self.__path)
 
